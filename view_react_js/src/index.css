@@ -1,0 +1,673 @@
+body {
+  background-color: #c8c4c4;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none !important;
+}
+
+section {
+  padding: 100px 0;
+  /* width: fit-content; */
+}
+
+.navbar {
+  width: 100%;
+  padding: 25px 0;
+  /* background: crimson; */
+  font-family: "Ubuntu", "sans-serif";
+  transition: all 0.3s ease;
+}
+
+.navbar.sticky {
+  padding: 15px 0;
+  background: var(--secondColor);
+  z-index: 1000;
+}
+.mt-5,
+.my-5 {
+  margin-top: 3rem !important;
+  margin: 0 auto;
+}
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar .logo a {
+  color: white;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.navbar .logo .fas {
+  color: #fff;
+}
+.navbar .logo {
+  text-transform: uppercase;
+  color: #e1e3e7;
+  letter-spacing: 0.2em;
+  font-size: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 2px solid #53c718;
+}
+
+.navbar.sticky .logo a span {
+  color: #fff;
+}
+
+.navbar .menu li {
+  list-style: none;
+  display: inline-block;
+}
+
+.navbar .menu li a {
+  display: block;
+  font-size: 18px;
+  font-weight: 400;
+  margin-left: 25px;
+  transition: color 0.3s ease;
+}
+
+.menu-btn {
+  color: white;
+  font-size: 23px;
+  cursor: pointer;
+  display: none;
+}
+
+.menu-btn::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 1.5px;
+  background: var(--secondColor);
+  transition: width 0.3s;
+}
+
+.navbar.sticky .menu-btn::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 1.5px;
+  background: white;
+  transition: width 0.3s;
+}
+
+.menu-btn:hover::after {
+  width: 100%;
+  transition: width 0.3s;
+}
+
+.navbar.sticky .menu-btn:hover::after {
+  width: 100%;
+  transition: width 0.3s;
+}
+
+.menu {
+  margin-bottom: 0;
+}
+
+.scroll-up-btn {
+  position: fixed;
+  height: 45px;
+  width: 42px;
+  background: var(--secondColor);
+  right: 30px;
+  bottom: 10px;
+  text-align: center;
+  line-height: 45px;
+  color: #fff;
+  z-index: 9999;
+  font-size: 30px;
+  cursor: pointer;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  opacity: 0;
+  border-radius: 5px;
+}
+
+.scroll-up-btn.show {
+  bottom: 30px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.navbar.sticky .menu li a:hover {
+  color: #fff;
+}
+
+.navbar.sticky .menu li a {
+  color: white;
+}
+.card {
+  width: 350px;
+  border: none;
+  height: 350px;
+  border-radius: 7px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.p-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.p-price {
+  position: absolute;
+  right: 10px;
+  top: 20px;
+}
+
+.heart i {
+  font-size: 50px;
+  opacity: 0;
+  color: red;
+}
+
+.heart i:hover {
+  color: red;
+}
+
+.p-image img {
+  width: 240px;
+  transform: rotate(15deg);
+  transition: all 0.5s;
+}
+
+.card:hover .heart i {
+  animation: heart 300ms ease-in forwards;
+  animation-delay: 500ms;
+}
+
+.p-about {
+  position: absolute;
+  width: 170px;
+  font-size: 10px;
+  top: 140px;
+  left: -125px;
+  opacity: 0;
+}
+
+.card:hover .p-about {
+  animation: content 300ms ease-in forwards;
+}
+
+@keyframes content {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+    left: 25px;
+  }
+}
+
+@keyframes heart {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.card:hover .p-image img {
+  animation: onimage 300ms ease-in forwards;
+}
+
+/* .card:hover .p-price {
+  animation: onprice 500ms ease-in forwards;
+} */
+
+@keyframes onprice {
+  0% {
+    right: 10px;
+    top: 20px;
+  }
+
+  50% {
+    right: 60px;
+    top: 30px;
+  }
+
+  100% {
+    right: 50px;
+    top: 70px;
+  }
+}
+
+@keyframes onimage {
+  0% {
+    width: 300px;
+  }
+
+  50% {
+    width: 100px;
+    transform: translateY(-30px);
+    transform: translateX(100px);
+  }
+
+  100% {
+    width: 180px;
+    top: 100px;
+    transform: translateY(100px);
+    transform: translateX(110px);
+  }
+}
+
+.buttons {
+  position: absolute;
+  bottom: -150px;
+}
+
+.card:hover .buttons {
+  animation: buttons 500ms ease-in forwards;
+}
+
+@keyframes buttons {
+  0% {
+    bottom: -100px;
+  }
+
+  100% {
+    bottom: 20px;
+  }
+}
+
+.btnn {
+  height: 50px;
+  font-size: 16px;
+  width: 100px !important;
+  font-weight: 600;
+  margin-left: 10px;
+}
+
+.site-section-heading {
+  margin: 0 auto;
+  margin-top: 10px;
+  font-size: 30px;
+  color: #25262a;
+  position: relative;
+}
+.site-section-heading.text-center:before {
+  margin-top: 20px;
+  content: "";
+  left: 50%;
+  top: 0;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  position: absolute;
+  width: 40px;
+  height: 2px;
+  background: #067206;
+}
+.abc {
+  padding-left: 40px;
+}
+
+.pqr {
+  padding-right: 70px;
+  padding-top: 14px;
+}
+
+.para {
+  float: right;
+  margin-right: 0;
+  padding-left: 80%;
+  top: 0;
+}
+
+.fa-star {
+  color: yellow;
+}
+
+li {
+  list-style: none;
+  line-height: 50px;
+  color: #000;
+}
+
+.col-md-2 {
+  padding-bottom: 20px;
+  font-weight: bold;
+}
+
+.col-md-2 a {
+  text-decoration: none;
+  color: #000;
+}
+
+.col-md-2.mio {
+  font-size: 12px;
+  padding-top: 7px;
+}
+
+.des::after {
+  content: ".";
+  font-size: 0;
+  display: block;
+  border-radius: 20px;
+  height: 6px;
+  width: 55%;
+  background: green;
+  margin: 14px 0;
+}
+
+.r4 {
+  padding-left: 25px;
+}
+
+.btn-outline-warning {
+  border-radius: 0;
+  border: 2px solid green;
+  color: #000;
+  font-size: 12px;
+  font-weight: bold;
+  width: 70%;
+}
+
+@media screen and (max-width: 620px) {
+  .container {
+    width: 98%;
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+  }
+
+  .des::after {
+    content: ".";
+    font-size: 0;
+    display: block;
+    border-radius: 20px;
+    height: 6px;
+    width: 35%;
+    background: greenyellow;
+    margin: 10px auto;
+  }
+
+  .pqr {
+    text-align: center;
+    margin: 0 30px;
+  }
+
+  .para {
+    text-align: center;
+    padding-left: 90px;
+    padding-top: 10px;
+  }
+
+  .klo {
+    display: flex;
+    text-align: center;
+    margin: 0 auto;
+    margin-right: 40px;
+  }
+}
+.col-md-5 {
+  margin-left: 92px;
+}
+.mt-4,
+.my-4 {
+  padding: 10px;
+  border: 5px solid green;
+}
+a {
+  color: white;
+}
+/* login */
+.register-photo {
+  padding: 80px 0;
+}
+
+.register-photo .image-holder {
+  display: table-cell;
+  width: auto;
+  background: url(https://hanoicomputercdn.com/media/lib/51502_gioi-thieu-tai-nghe-asus-headset-rog-strix-go-2-4.jpg);
+  background-size: cover;
+}
+
+.register-photo .form-container {
+  display: table;
+  max-width: 900px;
+  width: 90%;
+  margin: 0 auto;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.register-photo form {
+  display: table-cell;
+  width: 400px;
+  background-color: #ffffff;
+  padding: 40px 60px;
+  color: #505e6c;
+}
+
+@media (max-width: 991px) {
+  .register-photo form {
+    padding: 40px;
+  }
+}
+
+.register-photo form h2 {
+  font-size: 24px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.register-photo form .form-control {
+  background: transparent;
+  border: none;
+  color: #61acb3;
+  border-bottom: 1px solid #dfe7f1;
+  border-radius: 0;
+  box-shadow: none;
+  outline: none;
+  color: inherit;
+  text-indent: 0px;
+  height: 40px;
+}
+
+.register-photo form .form-check {
+  font-size: 13px;
+  line-height: 20px;
+}
+
+.register-photo form .btn-primary {
+  background: #61acb3;
+  border: none;
+  border-radius: 25px;
+  padding: 11px;
+  box-shadow: none;
+  margin-top: 35px;
+  text-shadow: none;
+  outline: none !important;
+}
+
+.register-photo form .btn-primary:hover,
+.register-photo form .btn-primary:active {
+  background: #61acb3;
+}
+
+.register-photo form .btn-primary:active {
+  transform: translateY(1px);
+}
+
+.register-photo form .already {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  color: #6f7a85;
+  opacity: 0.9;
+  text-decoration: none;
+}
+.dropdown-left {
+  position: relative;
+  left: -100px; /* Điều chỉnh giá trị này để di chuyển dropdown theo mong muốn */
+}
+/* profile */
+.form-control:focus {
+  box-shadow: none;
+  border-color: #53c718;
+}
+
+.profile-button {
+  background: #067206;
+  box-shadow: none;
+  border: none;
+}
+
+.profile-button:hover {
+  background: #067206;
+}
+
+.profile-button:focus {
+  background: #067206;
+  box-shadow: none;
+}
+
+.profile-button:active {
+  background: #067206;
+  box-shadow: none;
+}
+
+.back:hover {
+  color: #067206;
+  cursor: pointer;
+}
+
+.errorMsg {
+  max-width: 100%;
+  font-size: 0.75rem;
+  color: rgb(248, 106, 106);
+}
+/* search */
+.form-search {
+  position: relative;
+}
+
+.form-search .fa-search {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  color: #9ca3af;
+}
+
+.form-search span {
+  position: absolute;
+  right: 17px;
+  top: 13px;
+  padding: 2px;
+  border-left: 1px solid #d1d5db;
+}
+
+.left-pan {
+  padding-left: 7px;
+}
+
+.left-pan i {
+  padding-left: 10px;
+}
+
+.form-input {
+  height: 45px;
+  width: 400px;
+  text-indent: 33px;
+  border-radius: 100px;
+}
+
+.form-input:focus {
+  box-shadow: none;
+  border: none;
+}
+.fa-search {
+  font-size: 20px;
+}
+/* footer */
+.content_nav {
+  margin-bottom: 430px;
+}
+/* doanh thu */
+.chart-container {
+  width: 1400px;
+  height: 600px;
+}
+.input-container {
+  margin-bottom: 10px;
+}
+
+.input-label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.input-field {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.product-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.product-item {
+  width: 30%; /* Sản phẩm chiếm 30% chiều rộng */
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+/* CSS cho phần phân trang */
+.pagination {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.pagination li {
+  margin: 0 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.pagination .active {
+  font-weight: bold;
+  color: #0f5dd9;
+}
+
+.pagination li:first-child,
+.pagination li:last-child {
+  padding: 0.2rem 0.5rem;
+  border: 1px solid #0fba14;
+  border-radius: 4px;
+  color: #0fba14;
+}
+
+.pagination li:first-child {
+  margin-right: 0.5rem;
+}
+
+.pagination li:last-child {
+  margin-left: 0.5rem;
+}
+
+/* CSS cho phần tìm kiếm */
+.form-search {
+  margin-left: 40px;
+}
+.mgerror {
+  margin-right: 700px;
+}

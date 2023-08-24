@@ -1,0 +1,26 @@
+#sidebar {
+  background-color: green;
+  color: #fff;
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px;
+}
+#sidebar h1 {
+  margin-bottom: 20px;
+}
+#sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+#sidebar li {
+  margin-bottom: 10px;
+}
+#content {
+  margin-left: 250px;
+}
+.outlet {
+  padding: 20px;
+}
